@@ -13,7 +13,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.8" # 使用するPythonのバージョンを指定
+          python-version: "3.12" # 使用するPythonのバージョンを指定
 
       - name: Install dependencies
         run: |
@@ -24,24 +24,12 @@ jobs:
       # - name: Find ChromeDriver
       #   run: which chromedriver
 
-      # - name: Set ChromeDriver Path
-      #   run: echo 'export PATH=$PATH:/usr/bin/chromium-browser/' >> $GITHUB_ENV
-
       - name: Install Chrome
         run: |
           sudo apt update
           sudo apt install -y wget
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install -y ./google-chrome-stable_current_amd64.deb
-
-      # - name: Install ChromeDriver
-      #   run: |
-      #     CHROME_VERSION=$(google-chrome --version | sed 's/Google Chrome //')
-      #     LATEST_DRIVER=$(wget -qO- "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-      #     wget "https://chromedriver.storage.googleapis.com/$LATEST_DRIVER/chromedriver_linux64.zip"
-      #     unzip chromedriver_linux64.zip
-      #     sudo mv chromedriver /usr/local/bin/
-      #     sudo chmod +x /usr/local/bin/chromedriver
 
       - name: Run Selenium tests
         run: |
