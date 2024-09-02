@@ -21,10 +21,10 @@ def selenium_test(url, expected_title):
     chrome_options = Options()
     chrome_options.add_argument("--headless")  # ヘッドレスモード
 
-    # ソースコードと同じディレクトリにある chromedriver のパスを取得
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-
 # Windows の場合
+    # ソースコードと同じディレクトリにある chromedriver のパスを取得
+    # current_dir = os.path.dirname(os.path.abspath(__file__))
+
     # chrome_driver_path = os.path.join(current_dir, "chromedriver.exe")
     # service = Service(executable_path=chrome_driver_path)
     # driver = webdriver.Chrome(service=service, options=chrome_options)
