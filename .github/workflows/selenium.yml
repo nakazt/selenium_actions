@@ -21,6 +21,9 @@ jobs:
           pip install selenium
           sudo apt-get install -y chromium-chromedriver
 
+      - name: Set ChromeDriver Path
+        run: echo 'export PATH=$PATH:/usr/lib/chromium-browser/' >> $GITHUB_ENV
+
       - name: Install Chrome
         run: |
           sudo apt update
