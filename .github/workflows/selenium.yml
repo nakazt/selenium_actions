@@ -39,4 +39,4 @@ jobs:
 
       - name: Run Selenium tests
         run: |
-          python selenium_actions.py
+          python selenium_test.py
