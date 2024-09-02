@@ -30,7 +30,7 @@ def selenium_test(url, expected_title):
     # driver = webdriver.Chrome(service=service, options=chrome_options)
 
 # Ubuntu の場合
-    service = Service('/usr/local/bin/chromedriver')
+    service = Service('/usr/bin/chromedriver')
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
     # テスト対象のWebページにアクセス
