@@ -33,7 +33,6 @@ def selenium_test(url, expected_title):
 
     # テスト開始
     driver.get(url)
-
     title = driver.title
     h1_text = driver.find_element(By.TAG_NAME, "h1").text
 
@@ -45,7 +44,6 @@ def selenium_test(url, expected_title):
     print(f"h1 text:    {h1_text}")
 
     time.sleep(1)
-
     driver.quit()
 
 
