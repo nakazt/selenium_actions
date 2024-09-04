@@ -36,7 +36,7 @@ def selenium_test(url, expected_h1):
 
     assert (
         h1_text == expected_h1
-    ), f"H1 が一致しません。取得値: {h1_text}、期待値: {EXPECTED_H1}"
+    ), f"H1 does not match. Retrieved: {h1_text}, Expected: {EXPECTED_H1}"
 
     print(f"page title: {title}")
     print(f"h1 text:    {h1_text}")
