@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 
 
 TARGET_URL = "https://nakazt.github.io/actions_test/"
-EXPECTED_H1 = "GitHub Actions + Pages Samples"
+EXPECTED_H1 = "GitHub Actions + Pages Sample"
 
 
 def selenium_test(url, expected_h1):
