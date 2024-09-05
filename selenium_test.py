@@ -17,6 +17,7 @@ EXPECTED_H1 = "GitHub Actions + Pages Sample"
 def selenium_test(url, expected_h1):
     """テストの実行"""
 
+    # Selenium 設定
     chrome_options = Options()
     chrome_options.add_argument("--headless")  # ヘッドレスモード
 
@@ -29,7 +30,7 @@ def selenium_test(url, expected_h1):
 
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
-    # テスト開始
+    # テスト実行
     driver.get(url)
     title = driver.title
     h1_text = driver.find_element(By.TAG_NAME, "h1").text
