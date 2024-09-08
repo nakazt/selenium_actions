@@ -2,4 +2,4 @@
 
 ## 概要
 
-Actions で Selenium による Web サイトのテストを自動実行します。
+Selenium を使用して Web サイトのテストを自動実行するための Actions です。

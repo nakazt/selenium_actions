@@ -17,9 +17,9 @@ EXPECTED_H1 = "GitHub Actions + Pages Sample"
 def selenium_test(url, expected_h1):
     """テストの実行"""
 
-    # Selenium 設定
+    # setup Selenium
     chrome_options = Options()
-    chrome_options.add_argument("--headless")  # ヘッドレスモード
+    chrome_options.add_argument("--headless")
 
     if os.name == "nt":
         current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -30,7 +30,7 @@ def selenium_test(url, expected_h1):
 
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
-    # テスト実行
+    # test start
     driver.get(url)
     title = driver.title
     h1_text = driver.find_element(By.TAG_NAME, "h1").text
@@ -39,8 +39,8 @@ def selenium_test(url, expected_h1):
         h1_text == expected_h1
     ), f"H1 does not match. Retrieved: {h1_text}, Expected: {EXPECTED_H1}"
 
-    print(f"page title: {title}")
-    print(f"h1 text:    {h1_text}")
+    print(f"  page title: {title}")
+    print(f"  h1 text:    {h1_text}")
 
     time.sleep(0)
     driver.quit()
