@@ -15,12 +15,8 @@ TARGET_URL = "https://nakazt.github.io/actions_test/"
 EXPECTED_H1 = "GitHub Actions + Pages Sample"
 
 
-def selenium_test(url, expected_h1):
-    """テストの実行"""
-
-    # setup Selenium
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
+def get_webdriver_path():
+    """get webdriver path"""
 
     if platform.system() == "Windows":
         current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -31,7 +27,16 @@ def selenium_test(url, expected_h1):
     else:
         service = Service("/usr/local/bin/chromedriver")
 
+    return service
 
+
+def selenium_test(url, expected_h1):
+    """exec selenium test"""
+
+    # setup Selenium
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    service = get_webdriver_path()
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
     # test start
